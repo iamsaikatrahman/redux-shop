@@ -1,8 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./containers/Header";
+import ProductDetails from "./containers/ProductDetails";
+import ProductListing from "./containers/ProductListing";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Redux Shop</h1>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<ProductListing />} />
+        <Route path="/product/:productId" element={<ProductDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
